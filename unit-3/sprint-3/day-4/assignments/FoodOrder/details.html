@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 100%;
+            height: 80vh;
+            /* border: 2px solid red; */
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 30px;
+            text-align: center;
+            background-color: grey;
+            color: white;
+            font-style: oblique;
+        }
+        #container>div{
+            /* border: 2px solid green; */
+            margin-top: 30px;
+        }
+        #image{
+            width: 70%;
+            border-radius: 10px;
+        }
+        #p{
+            font-size: 25px;
+            font-weight: bolder;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+        <div>
+            <img id="image" src="" alt="">
+            <p id="p"></p>
+        </div>
+        <div id="explain">
+            <h2>Ingedients</h2>
+            <p id="ing1"></p>
+            <p id="ing2"></p>
+            <p id="ing3"></p>
+            <p id="ing4"></p>
+            <p id="ing5"></p>
+            <p id="source"></p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let data = JSON.parse(localStorage.getItem("R_Details"));
+    appendData(data)
+    function appendData(data){
+        let image = document.getElementById('image');
+        image.src = data.strMealThumb;
+        let p = document.querySelector("#p");
+        p.innerText = data.strMeal;
+        let source = document.getElementById("source");
+        source.innerText = `Source: ${data.strSource}`         
+        let ing1 = document.getElementById("ing1");
+        ing1.innerText = data.strIngredient1
+        let ing2 = document.getElementById("ing2");
+        ing2.innerText = data.strIngredient2
+        let ing3 = document.getElementById("ing3");
+        ing3.innerText = data.strIngredient3
+        let ing4 = document.getElementById("ing4");
+        ing4.innerText = data.strIngredient4
+    }
+</script>
+<!-- // strIngredient1: "Lentils"
+// strIngredient2: "Onion"
+// strIngredient3: "Carrots"
+// strIngredient4: "Tomato Puree"
+// strIngredient5: "Cumin"
+// strIngredient6: "Paprika"
+// strIngredient7: "Mint"
+// strIngredient8: "Thyme"
+// strIngredient9: "Black Pepper"
+// strIngredient10: "Red Pepper Flakes"
+// strIngredient11: "Vegetable Stock"
+// strIngredient12: "Water"
+// strIngredient13: "Sea Salt" -->

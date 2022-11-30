@@ -1,0 +1,202 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #member-1 {
+            width: 10%;
+            height: 30px;
+            /* background-color: greenyellow; */
+            /* color: yellow; */
+            border: 1px solid black;
+            margin: 10px;
+        }
+
+        #member-2 {
+            width: 10%;
+            height: 30px;
+            /* background-color: yellow; */
+            /* color: yellow; */
+            border: 1px solid black;
+            margin: 10px;
+        }
+
+        #member-3 {
+            width: 10%;
+            height: 30px;
+            border: 1px solid black;
+            margin: 10px;
+            /* background-color: red; */
+            /* color: yellow; */
+        }
+
+        #winner {
+            width: 30%;
+            height: 20px;
+            margin: auto;
+            /* background-color: green;
+            color: white; */
+            text-align: center;
+        }
+        #second {
+            width: 30%;
+            height: 20px;
+            margin: auto;
+            /* background-color: green;
+            color: white; */
+            text-align: center;
+        }
+        #third {
+            width: 30%;
+            height: 20px;
+            margin: auto;
+            /* background-color: green;
+            color: white; */
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="winner">
+    </div>
+
+    <div id="second">
+
+    </div>
+
+    <div id="third">
+
+    </div>
+    <div id="member-1">
+        <p></p>
+    </div>
+    <div id="member-2">
+        <p></p>
+    </div>
+    <div id="member-3">
+        <p></p>
+    </div>
+    <button id="roll">Roll The Dice</button>
+</body>
+
+</html>
+<script>
+    document.querySelector("#roll").addEventListener("click", rollDice);
+    function rollDice() {
+        function generateRandomNumber1() {
+            return Math.floor(Math.random() * 6) + 1;
+        }
+        function generateRandomNumber2() {
+            return Math.floor(Math.random() * 6) + 1;
+        }
+        function generateRandomNumber3() {
+            return Math.floor(Math.random() * 6) + 1;
+        }
+        let result1 = generateRandomNumber1();
+        console.log(result1);
+        let result2 = generateRandomNumber2();
+        console.log(result2);
+        let result3 = generateRandomNumber3();
+        console.log(result3);
+
+        document.querySelector("#member-1>p").innerText = result1;
+        document.querySelector("#member-2>p").innerText = result2;
+        document.querySelector("#member-3>p").innerText = result3;
+
+
+        let x = document.querySelector("#member-1>p").innerText;
+        let y = document.querySelector("#member-2>p").innerText;
+        let z = document.querySelector("#member-3>p").innerText;
+
+        if (x > y && x > z && y>z) {
+            document.querySelector("#winner").innerText = "A";
+            document.querySelector("#winner").style.backgroundColor = "greenyellow";
+            document.querySelector("#second").innerText = "B";
+            document.querySelector("#second").style.backgroundColor = "yellow";
+            document.querySelector("#third").innerText = "C";
+            document.querySelector("#third").style.backgroundColor = "red";
+
+        }
+        if (x > y && x > z && z>y) {
+            document.querySelector("#winner").innerText = "A";
+            document.querySelector("#winner").style.backgroundColor = "greenyellow";
+            document.querySelector("#second").innerText = "C";
+            document.querySelector("#second").style.backgroundColor = "yellow";
+            document.querySelector("#third").innerText = "B";
+            document.querySelector("#third").style.backgroundColor = "red";
+
+        }
+        if (y > x && y > z && x>z) {
+            document.querySelector("#winner").innerText = "B";
+            document.querySelector("#winner").style.backgroundColor = "greenyellow";
+            document.querySelector("#second").innerText = "A";
+            document.querySelector("#second").style.backgroundColor = "yellow";
+            document.querySelector("#third").innerText = "C";
+            document.querySelector("#third").style.backgroundColor = "red";
+
+        }
+        if (z > x && z > y && y>x) {
+            document.querySelector("#winner").innerText = "C";
+            document.querySelector("#winner").style.backgroundColor = "greenyellow";
+            document.querySelector("#second").innerText = "B";
+            document.querySelector("#second").style.backgroundColor = "yellow";
+            document.querySelector("#third").innerText = "A";
+            document.querySelector("#third").style.backgroundColor = "red";
+
+        }
+        if (z > x && z > y && x>y) {
+            document.querySelector("#winner").innerText = "C";
+            document.querySelector("#winner").style.backgroundColor = "greenyellow";
+            document.querySelector("#second").innerText = "A";
+            document.querySelector("#second").style.backgroundColor = "yellow";
+            document.querySelector("#third").innerText = "B";
+            document.querySelector("#third").style.backgroundColor = "red";
+
+        }
+        if(x==y && y==z && x==z){
+            document.querySelector("#winner").innerText = "A";
+            document.querySelector("#winner").style.backgroundColor = "blue";
+            document.querySelector("#second").innerText = "B";
+            document.querySelector("#second").style.backgroundColor = "blue";
+            document.querySelector("#third").innerText = "C";
+            document.querySelector("#third").style.backgroundColor = "blue";
+        }
+        if(x==y && z<y){
+            document.querySelector("#winner").innerText = "A";
+            document.querySelector("#winner").style.backgroundColor = "blue";
+            document.querySelector("#second").innerText = "B";
+            document.querySelector("#second").style.backgroundColor = "blue";
+            document.querySelector("#third").innerText = "C";
+            document.querySelector("#third").style.backgroundColor = "red";
+        }
+        if(x==y && y<z){
+            document.querySelector("#winner").innerText = "C";
+            document.querySelector("#winner").style.backgroundColor = "greenyellow";
+            document.querySelector("#second").innerText = "A";
+            document.querySelector("#second").style.backgroundColor = "blue";
+            document.querySelector("#third").innerText = "B";
+            document.querySelector("#third").style.backgroundColor = "blue";
+        }
+        if(x==z && y>z){
+            document.querySelector("#winner").innerText = "B";
+            document.querySelector("#winner").style.backgroundColor = "greenyellow";
+            document.querySelector("#second").innerText = "A";
+            document.querySelector("#second").style.backgroundColor = "blue";
+            document.querySelector("#third").innerText = "C";
+            document.querySelector("#third").style.backgroundColor = "blue";
+        }
+        if(x==y && y<z){
+            document.querySelector("#winner").innerText = "A";
+            document.querySelector("#winner").style.backgroundColor = "blue";
+            document.querySelector("#second").innerText = "C";
+            document.querySelector("#second").style.backgroundColor = "blue";
+            document.querySelector("#third").innerText = "B";
+            document.querySelector("#third").style.backgroundColor = "red";
+        }
+        
+    }
+</script>

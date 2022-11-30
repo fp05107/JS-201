@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="assname">
+    <button onclick="addassignment()">Add Assignment</button>
+    <div id="c"></div>
+</body>
+</html>
+<script>
+    function addassignment(){
+        let assname = document.getElementById("assname").value;
+        let div = document.createElement('div');
+        let h3 = document.createElement("p")
+        h3.innerText = assname;
+        div.append(h3)
+        document.getElementById('c').append(div)
+    }
+</script>

@@ -1,0 +1,75 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "If you can’t feed a team with two pizzas, it’s too large",
+      "author": "subham"
+    },
+    {
+      "id": 2,
+      "title": "Every time we launch a feature, people yell at us",
+      "author": "subham"
+    },
+    {
+      "id": 3,
+      "title": "Always look for the fool in the deal. If you don’t find one, it’s you.",
+      "author": "subham"
+    },
+    {
+      "id": 4,
+      "title": "If you define yourself by how you differ from the competition, you’re probably in trouble.",
+      "author": "subham"
+    },
+    {
+      "id": 5,
+      "title": "Stay self-funded as long as possible.",
+      "author": "subham"
+    },
+    {
+      "id": 6,
+      "title": "We are currently not planning on conquering the world.",
+      "author": "subham"
+    },
+    {
+      "id": 7,
+      "title": "It’s not that we need new ideas, but we need to stop having old ideas",
+      "author": "subham"
+    },
+    {
+      "id": 8,
+      "title": "If you can’t feed a team with two pizzas, it’s too large",
+      "author": "subham"
+    },
+    {
+      "id": 9,
+      "title": "Don’t worry about failure; you only have to be right once.",
+      "author": "subham"
+    },
+    {
+      "id": 10,
+      "title": "Get big quietly, so you don’t tip off potential competitors.",
+      "author": "subham"
+    },
+    {
+      "id": 11,
+      "title": "If you can’t feed a team with two pizzas, it’s too large",
+      "author": "subham"
+    },
+    {
+      "id": 12,
+      "title": "As long as you’re going to be thinking anyway, think big.",
+      "author": "subham"
+    }
+    
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

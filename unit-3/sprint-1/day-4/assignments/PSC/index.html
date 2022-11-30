@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            width: 35%;
+            margin: auto;
+        }
+        input{
+            width: 100%;
+            margin: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button>
+       <a href="dashboard.html">DashBoard</a> 
+    </button>
+    <form id="students_data" onsubmit="storeData(event)">
+        <input id="name" type="text" placeholder="Enter name here">
+        <input id="course" type="text" placeholder="Enter course here">
+        <input id="unit" type="text" placeholder="Enter unit here">
+        <input id="image" type="text" placeholder="Enter image URL">
+        <input id="batch" type="number" placeholder="Enter batch name">
+    </form>
+</body>
+</html>
+<script src="index.js"></script>

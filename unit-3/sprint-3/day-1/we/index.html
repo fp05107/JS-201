@@ -1,0 +1,116 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            /* overflow-y: scroll; */
+        }
+
+        #navbar {
+            width: 100vw;
+            /* border: 1px solid red; */
+            /* text-align: center;
+             */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(48, 47, 47);
+
+            position: sticky;
+        }
+
+        #navbar>div {
+            margin: auto;
+            width: 45%;
+            /* border: 2px solid green; */
+        }
+
+        #navbar>div>img {
+            width: 10%;
+        }
+
+        input {
+            width: 75%;
+            height: 35px;
+            margin-right: -10%;
+            -webkit-appearance: none;
+            -webkit-font-smoothing: antialiased;
+            /* background-color: transparent; */
+            border: none;
+            box-shadow: none;
+            color: inherit;
+            font-family: Roboto, Noto, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-left: 4px;
+            max-width: 100%;
+            outline: none;
+            text-align: inherit;
+        }
+
+        button {
+            width: 20%;
+            height: 35px;
+            margin-left: 0;
+            /* background-color:; */
+        }
+
+        #container {
+            width: 100vw;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            /* border: 2px solid salmon; */
+            background-color: #717171;
+        }
+
+        #container>div {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            margin-top: 30px;
+            /* border: 3px solid red; */
+            color: white;
+            font-weight: bold;
+            /* height: 180; */
+            /* width: 320; */
+        }
+
+        #container>div>img {
+            width: 100%;
+        }
+
+        iframe {
+            border: 2px solid salmon;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <div><img src="https://cdn-icons-png.flaticon.com/128/5968/5968852.png" alt=""></div>
+        <div>
+            <input type="text" id="query">
+            <button onclick="getdata()">Search</button>
+        </div>
+
+        <!-- <div> <img id="profile" src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt=""></div> -->
+    </div>
+
+    <div id="content">
+
+    </div>
+
+    <div id="container"></div>
+</body>
+
+</html>
+<script src="index.js"></script>

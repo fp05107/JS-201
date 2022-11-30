@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+    <select name="" id="sort">
+        <option value="">default</option>
+        <option value="">Sort by name</option>
+        <!-- <option value=""></option> -->
+    </select>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+    let data = JSON.parse(localStorage.getItem("bookmark_data"));
+    document.getElementById('sort').addEventListener('change',function(){
+
+        data.sort(function(a,b){
+            let x = a.Title;
+            let y =  b.Title;
+            if(x>y){return 1}
+            if(x<y){return -1}
+            else{return 0}
+        })
+        appendData(data)
+    })
+        appendData(data)
+        function appendData(data){
+            document.getElementById('container').innerHTML = null;
+        data.forEach((element,index) => {
+            let div = document.createElement("div");
+            let image = document.createElement("img");
+            image.src = element.Poster;
+            let p = document.createElement('p');
+            p.innerText = element.Title;
+            let btn = document.createElement('button');
+            btn.innerText = 'Remove';
+            btn.addEventListener('click',()=>{
+                data.splice(index,1);
+                localStorage.setItem('bookmark_data',JSON.stringify(data));
+                appendData(data)
+                
+            })
+            
+            div.append(image,p,btn);
+            document.getElementById('container').append(div)
+        });
+    }
+
+  
+</script>

@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            width: 30%;
+            margin: auto;
+        }
+
+        input {
+            margin: 10px;
+            width: 100%;
+            height: 30px;
+        }
+        #btn{
+            margin-left: 500px; 
+            padding: 10px 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" onsubmit="addProduct(event)" id="form">
+        <input type="text" placeholder="Enter product name" id="name">
+        <input type="text" placeholder="Enter catagory" id="category">
+        <input type="text" placeholder="Enter image URL" id="image">
+        <input type="text" placeholder="Enter price" id="price">
+        <input type="text" placeholder="Gender" id="gender">
+        <input type="text" id="sold">
+        <input type="submit" id="add">
+    </form>
+    <button id="btn">Go to products</button>
+</body>
+
+</html>
+
+<script>
+    let prod_arr = JSON.parse(localStorage.getItem("Products")) || [];
+    // document.querySelector("#add").addEventListener("submit",addProduct);
+
+    function addProductCF(n, c, i, p, g) {
+        this.name = n;
+        this.category = c;
+        this.image = i;
+        this.price = p;
+        this.gender = g;
+    }
+
+    function addProduct(event) {
+        event.preventDefault();
+        let form = document.querySelector("#form");
+        let name = form.name.value;
+        let catagory = form.category.value;
+        let image = form.image.value;
+        let price = form.price.value;
+        let gender = form.gender.value;
+
+        let prod = new addProductCF(name, catagory, image, price, gender);
+        prod_arr.push(prod);
+        console.log(prod_arr)
+        localStorage.setItem("Products",JSON.stringify(prod_arr));
+    }
+    document.querySelector("#btn").addEventListener("click",function(){
+        window.location.href="products.html"
+    })
+</script>
