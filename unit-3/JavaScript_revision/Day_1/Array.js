@@ -29,7 +29,11 @@ Array.join(): Joins all elements of an array into a string.
 let arr3 = [1,2,3,4,5];
 let arr4 = [1,2,3];
 let arr5 = arr3.concat(arr4);
-console.log(arr5);
+//console.log(arr5);
+
+let i = y = 10;
+console.log(y)
+
 
 
 
